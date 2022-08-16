@@ -6,48 +6,44 @@ import Footer from "./components/footer/footer.jsx";
 import Form from "./components/form/form";
 import Results from "./components/results/results";
 
- function App() {
+export default function App() {
   const [data, setData] = useState({
-    data: null,
-    requestParams: {},
+    response: " ",
   });
-  const [result, setResult] = useState();
 
-  let state = {
-    data: null,
-    requestParams: {},
-  };
+  const [resultData, setResultData] = useState({});
 
   const callApi = (requestParams) => {
     // mock output
     const data = {
       count: 2,
       results: [
-        {
-          name: "fake thing 1",
-          url: "http://fakethings.com/1",
-        },
-        {
-          name: "fake thing 2",
-          url: "http://fakethings.com/2",
-        },
+        { name: "fake thing 1", url: "http://fakethings.com/1" },
+        { name: "fake thing 2", url: "http://fakethings.com/2" },
       ],
     };
-    setData({ ...data, data, requestParams });
+    setResultData(requestParams);
+    setData({ data });
   };
+
+  function handleSubmit(props) {
+    const formData = {
+      method: "GET",
+      url: "https://pokeapi.co/api/v2/pokemon",
+    };
+    props.handleApiCall(formData);
+  }
 
   return (
     <React.Fragment>
       <Header />
-      <Form handleApiCall={callApi} setResult={setResult} />
+      <Form handleApiCall={callApi} />
       <div>
-        <div>{data.requestParams.method}</div>
-        <div>{data.requestParams.url}</div>
+        <div>URL : {resultData.url}</div>
+        <div>Method : {resultData.method}</div>
       </div>
-      <Results result={result} />
+      <Results data={data} />
       <Footer />
     </React.Fragment>
   );
 }
-
-module.exports = App;
