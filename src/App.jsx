@@ -26,14 +26,6 @@ export default function App() {
     setData({ data });
   };
 
-  function handleSubmit(props) {
-    const formData = {
-      method: "GET",
-      url: "https://pokeapi.co/api/v2/pokemon",
-    };
-    props.handleApiCall(formData);
-  }
-
   return (
     <React.Fragment>
       <Header />
