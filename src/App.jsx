@@ -7,14 +7,10 @@ import Form from "./components/form/form";
 import Results from "./components/results/results";
 
 export default function App() {
-  const [data, setData] = useState({
-    response: " ",
-  });
-
-  const [resultData, setResultData] = useState({});
+  const [data, setData] = useState();
+  const [resultData, setResultData] = useState("");
 
   const callApi = (requestParams) => {
-    // mock output
     const data = {
       count: 2,
       results: [
@@ -22,8 +18,8 @@ export default function App() {
         { name: "fake thing 2", url: "http://fakethings.com/2" },
       ],
     };
-    setResultData(requestParams);
-    setData({ data });
+    setResultData();
+    setData(data);
   };
 
   return (
@@ -31,10 +27,9 @@ export default function App() {
       <Header />
       <Form handleApiCall={callApi} />
       <div>
-        <div>URL : {resultData.url}</div>
-        <div>Method : {resultData.method}</div>
+        {resultData.method} : {resultData.url}
       </div>
-      <Results data={data} />
+      <Results data={data}></Results>
       <Footer />
     </React.Fragment>
   );
