@@ -24,6 +24,7 @@ const Footer = () => {
           </section>
           <section className="footer-info-right">
             <section className="footer-info-number">+962799123681</section>
+            <section className="footer-info-number">+Thanks</section>
           </section>
         </section>
       </div>

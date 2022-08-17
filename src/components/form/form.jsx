@@ -9,8 +9,8 @@ function Form(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      url: apiUrl,
       method: method,
+      url: apiUrl,
       body: body,
     };
     props.handleApiCall(formData);
@@ -72,7 +72,7 @@ function Form(props) {
           </span>
         </label>
       </form>
-      {method === "post" || method === "put" ? <textarea id="body" onInput={handleBody} placeholder="name=body"></textarea> : null}
+      {method === "post" || method === "put" ? <textarea id="body" onInput={handleBody} placeholder="name=Data Details"></textarea> : null}
     </>
   );
 }
