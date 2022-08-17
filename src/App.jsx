@@ -19,8 +19,8 @@ export default function App() {
         .then((data) => {
           const dataDetails = {
             header: data.headers,
-            data: data.data,
             count: data.data.length,
+            data: data.data,
           };
           setData(dataDetails);
         })
@@ -36,8 +36,8 @@ export default function App() {
         .then(function (data) {
           const dataDetails = {
             header: data.headers,
+            count: 1,
             data: data.data,
-            count: data.data.length,
           };
           setData(dataDetails);
         })
@@ -53,8 +53,8 @@ export default function App() {
         .then((data) => {
           const dataDetails = {
             header: data.headers,
+            count: 1,
             data: data.data,
-            count: data.data.length,
           };
           setData(dataDetails);
         })
@@ -70,8 +70,8 @@ export default function App() {
         .then((data) => {
           const dataDetails = {
             header: data.headers,
+            count: 1,
             data: data.data,
-            count: data.data.length,
           };
           setData(dataDetails);
         })
