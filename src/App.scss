@@ -21,6 +21,7 @@ body {
 body {
   background: $backgroundColor;
   height: 100%;
+  background: rgba(209, 209, 209, 0.938);
 
   #root {
     display: flex;
@@ -28,12 +29,20 @@ body {
     height: 100%;
   }
 
-  footer {
-    background: darken($backgroundColor, 75);
-    border-top: 1px solid #eee;
-    color: #eee;
-    padding: 0.5em 3em;
-    margin: 0;
-    text-align: center;
+  #HistoryResults {
+    margin: 0.5em;
+    padding: 1em 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 81%;
   }
+}
+
+footer {
+  background: darken($backgroundColor, 75);
+  color: #eee;
+  padding: 0.5em 3em;
+  margin: 0;
+  text-align: center;
+  justify-content: space-between;
 }

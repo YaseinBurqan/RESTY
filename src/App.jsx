@@ -1,15 +1,16 @@
 import "./App.scss";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 
 import Header from "./components/header/header.jsx";
 import Footer from "./components/footer/footer.jsx";
 import Form from "./components/form/form";
+import History from "./components/history/history";
 import Results from "./components/results/results";
 
 import axios from "axios";
 
 export default function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState("");
   const [resultData, setResultData] = useState("");
 
   useEffect(() => {
@@ -91,10 +92,12 @@ export default function App() {
     <React.Fragment>
       <Header />
       <Form handleApiCall={callApi} />
-      <div>
-        {resultData.method} : {resultData.url}
+
+      <div id="HistoryResults">
+        <History history={resultData} />
+        <Results data={data} />
       </div>
-      <Results data={data}></Results>
+
       <Footer />
     </React.Fragment>
   );
