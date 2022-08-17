@@ -26,6 +26,9 @@
     "type": "git",
     "url": "git+https://yaseinburqan.gothub.io/RESTy"
   },
+  "bugs": {
+    "url": "https://github.com/yaseinburqan/RESTy/issues"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
