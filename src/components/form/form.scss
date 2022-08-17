@@ -2,26 +2,45 @@ $backgroundColor: #efefef;
 $radius: 40%;
 
 form {
-    display: inline-block;
-    margin: auto;
-    width: 200px;
+  display: inline-block;
+  margin: auto;
 
-    label {
-        display: flex;
-        margin: 1rem 0;
+  label {
+    display: flex;
+    margin: 1em;
 
-        &.methods {
-            span {
-                cursor: pointer;
-                margin-right: 1rem;
-                padding: .25rem .5rem;
-                background: #ccc;
+    &.methods {
+      input[type="text"] {
+        background: #f5f5f5;
+        border: none;
+        border-bottom: 1px solid #000;
+        font-size: 1.1rem;
+        margin: 0;
+        outline: none;
+        padding: 0.25rem;
+        transition: all 400ms ease-out;
+      }
+      &:focus {
+        border-bottom: 2px solid rgb(3, 3, 3);
+      }
 
-                &:hover,
-                &.active {
-                    background: #fff;
-                }
-            }
+      span {
+        cursor: pointer;
+        border: 1px solid rgb(125, 125, 125);
+        border-radius: 10px;
+        margin-right: 1rem;
+        padding: 0.25rem 0.5rem;
+        background: rgb(255, 255, 255);
+
+        &:hover,
+        &.active {
+          background-color: rgb(255, 136, 0);
         }
+      }
     }
+    textarea {
+      flex: 1;
+      height: 1.25rem;
+    }
+  }
 }

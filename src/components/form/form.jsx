@@ -70,9 +70,9 @@ function Form(props) {
           >
             DELETE
           </span>
+          <textarea id="body" name="data" onInput={handleBody} placeholder="Data Details"></textarea>
         </label>
       </form>
-      {method === "post" || method === "put" ? <textarea id="body" onInput={handleBody} placeholder="name=Data Details"></textarea> : null}
     </>
   );
 }
